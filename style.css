@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: auto;
+    margin-top: 25px;
+    background: black;
+    border-radius: 10px 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 500px;
+    height: 500px;
+    grid-template-areas:
+    "operations operations operations operations"
+    "btn7 btn8 btn9 btnDiv"
+    "btn4 btn5 btn6 btnMulti"
+    "btn1 btn2 btn3 btnMinus"
+    "btnClear btn0 btnEqual btnAdd";
+    box-shadow: 10px 10px 6px rgb(169, 169, 169);
+}
+
+#operations {
+    grid-area: operations;
+    margin: 14px;
+    margin-top: 18px;
+    text-align: right;
+    border-radius: 8px 8px;
+    font-size: 55px;
+    padding-right: 15px;
+}
+
+.btnCalculator {
+    border-radius: 12px 12px;
+    margin: 10px;
+    font-size: 50px;
+}
+
+.btnCalculator:active {
+    background-color: darkgreen;
+    color: white;
+    transform: scale(0.95);
+}
+
+.btnNumbers {
+    background: lightblue;
+}
+
+.btnOper {
+    background: lightcoral;
+}
+
+.btn7 {
+    grid-area: btn7;
+}
+
+.btn8 {
+    grid-area: btn8;
+}
+
+.btn9 {
+    grid-area: btn9;
+}
+
+.btnDiv {
+    grid-area: btnDiv;
+}
+
+.btn4 {
+    grid-area: btn4;
+}
+
+
+.btn5 {
+    grid-area: btn5;
+}
+
+
+.btn6 {
+    grid-area: btn6;
+}
+
+.btnMulti {
+    grid-area: btnMulti;
+}
+
+.btn3 {
+    grid-area: btn3;
+}
+
+.btn2 {
+    grid-area: btn2;
+}
+
+.btn1 {
+    grid-area: btn1;
+}
+
+.btnMinus {
+    grid-area: btnMinus;
+}
+
+.btnClear {
+    grid-area: btnClear;
+    background: orange;
+}
+
+.btn0 {
+    grid-area: btn0;
+}
+
+.btnEqual {
+    grid-area: btnEqual;
+    background: rgb(159, 106, 209);
+}
+
+.btnAdd {
+    grid-area: btnAdd;
+}
+
