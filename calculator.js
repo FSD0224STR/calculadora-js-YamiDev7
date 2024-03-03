@@ -6,6 +6,7 @@ const buttonEqual     = document.querySelector('.btnEqual');
 const buttonSin       = document.querySelector('.btnSin');
 const buttonCos       = document.querySelector('.btnCos');
 const buttonLogNep    = document.querySelector('.btnLogNep');
+const buttonLog       = document.querySelector('.btnLog');
 const buttonRaiz      = document.querySelector('.btnRaiz');
 const buttonPlusMinus = document.querySelector('.btnPlusMinus');
 const inputExpresion  = document.getElementById('operations');
@@ -31,20 +32,34 @@ inputExpresion.addEventListener("keypress", (event) => {
 
 buttonsNumber.forEach(button => {
     button.addEventListener('click', () => {
+        let valueExpresion = inputExpresion.value;
         cleanZero();
         let valueBtn = button.textContent;
-        inputExpresion.value += valueBtn;
+        valueExpresion = inputExpresion.value += valueBtn;
+        if (valueExpresion.includes('Log')) {
+            if (valueExpresion.includes(',')) {
+                valueExpresion = inputExpresion.value += ')';
+            } else {
+                valueExpresion = inputExpresion.value += ',';
+                alert('Introduce la base del logaritmo');
+            }
+        }
+        inputExpresion.value = valueExpresion;
         inputExpresion.focus();
     });
 });
 
 buttonsOper.forEach(button => {
     button.addEventListener('click', () => {
-        if (inputExpresion.value === '0') {
+        let valueOperation = inputExpresion.value;
+        let valueBtn = button.value;
+        if (valueOperation === '0' &&
+            valueBtn !== 'Log(' &&
+            valueBtn !== '10^' &&
+            valueBtn !== '-') {
             alert('Primero debes introducir un numero');
         } else {
             cleanZero();
-            let valueBtn = button.value;
             inputExpresion.value += valueBtn;
             inputExpresion.focus();
         }
@@ -69,17 +84,26 @@ buttonDelete.addEventListener('click', () => {
 
 buttonEqual.addEventListener('click', () => {
     let valueOperation = inputExpresion.value;
-    result = math.evaluate(valueOperation);
-    inputExpresion.value = '';
-    inputExpresion.value = result;
-    inputExpresion.focus();
+    let result = 0;
+    if (valueOperation.includes('Log')) {
+        const numbers = valueOperation.replace(/[Log()]/g,'');
+        const onlyNumbers = numbers.split(',');
+        let num = onlyNumbers[0];
+        let base = onlyNumbers[1];
+        result = math.log(num,base);
+        inputExpresion.value = result;
+        inputExpresion.focus();
+    } else {
+        result = math.evaluate(valueOperation);
+        inputExpresion.value = result;
+        inputExpresion.focus();
+    }
 })
 
 buttonSin.addEventListener('click', () => {
     let valueOperation = inputExpresion.value;
     let radianes = Number(valueOperation) * (pi / 180);
     result = math.sin(radianes);
-    inputExpresion.value = '';
     inputExpresion.value = result;
     inputExpresion.focus();
 })
@@ -88,33 +112,52 @@ buttonCos.addEventListener('click', () => {
     let valueOperation = inputExpresion.value;
     let radianes = Number(valueOperation) * (pi / 180);
     result = math.cos(radianes);
-    inputExpresion.value = '';
     inputExpresion.value = result;
     inputExpresion.focus();
 })
 
 buttonLogNep.addEventListener('click', () => {
     let valueOperation = inputExpresion.value;
-    console.log(valueOperation);
     result = math.log(valueOperation);
-    inputExpresion.value = '';
     inputExpresion.value = result;
     inputExpresion.focus();
+})
+
+buttonLog.addEventListener('click', () => {
+    let valueOperation = inputExpresion.value;
+    if (valueOperation !== '0' && valueOperation !== 'Log(') {
+        alert('No puedes introducir un numero delante del Logaritmo');
+        inputExpresion.value = valueOperation;
+    } else {
+        inputExpresion.value = valueOperation;
+        inputExpresion.focus();
+    }
 })
 
 buttonRaiz.addEventListener('click', () => {
     let valueOperation = inputExpresion.value;
     result = math.sqrt(valueOperation);
-    inputExpresion.value = '';
     inputExpresion.value = result;
     inputExpresion.focus();
 })
 
 buttonPlusMinus.addEventListener('click', () => {
+    const patronNumbers = '0123456789';
     let valueOperation = inputExpresion.value;
-    let result = Number(valueOperation) *-1;
-    inputExpresion.value = result;
-    inputExpresion.focus();
+    let valueSinSpaces = valueOperation.trim()
+    let haveOnlyNumber = true;
+    for (i=0; i < valueSinSpaces.length; i++) {
+        if (!patronNumbers.includes(valueSinSpaces[i])) {
+            haveOnlyNumber = false;
+        }
+    }
+    if (haveOnlyNumber) {
+        let result = Number(valueSinSpaces) *-1;
+        inputExpresion.value = result;
+        inputExpresion.focus();
+    } else {
+        inputExpresion.value = valueSinSpaces;
+    }
 })
 
 
