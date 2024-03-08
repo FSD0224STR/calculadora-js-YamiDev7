@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: auto;
+    margin-top: 25px;
+    background: black;
+    border-radius: 10px 10px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 800px;
+    height: 600px;
+    grid-template-areas:
+    "operations operations operations operations operations operations operations"
+    "btn7 btn8 btn9 btnDelete btnDiv btnPotencia btnSin"
+    "btn4 btn5 btn6 btnClear btnMulti btnPotencia10 btnCos"
+    "btn1 btn2 btn3 btnLog btnMinus btnCuadrado btnRaiz"
+    "btnPoint btn0 btnPlusMinus btnLogNep btnAdd btnEqual btnEqual";
+    border: 1px solid white;
+    box-shadow: 7px 7px black;
+}
+
+#operations {
+    grid-area: operations;
+    margin: 14px;
+    margin-top: 18px;
+    text-align: right;
+    border-radius: 8px 8px;
+    font-size: 55px;
+    padding-right: 15px;
+    box-shadow: inset -6px -6px 0.1px rgba(0,0,0,0.15);
+}
+
+.btnCalculator {
+    border-radius: 12px 12px;
+    margin: 16px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.btnCalculator:active {
+    background-color: darkgreen;
+    color: white;
+    transform: scale(0.95);
+    border: 1px solid darkgreen;
+    box-shadow: 0px 0px darkgreen;
+}
+
+.btnNumbers {
+    background: lightblue;
+    box-shadow: 4px 4px lightblue;
+}
+
+.btnOper {
+    background: lightcoral;
+    box-shadow: 4px 4px lightcoral;
+}
+
+.btn7 {
+    grid-area: btn7;
+}
+
+.btn8 {
+    grid-area: btn8;
+}
+
+.btn9 {
+    grid-area: btn9;
+}
+
+.btnDiv {
+    grid-area: btnDiv;
+    padding-top: 5px;
+}
+
+.btn4 {
+    grid-area: btn4;
+}
+
+
+.btn5 {
+    grid-area: btn5;
+}
+
+
+.btn6 {
+    grid-area: btn6;
+}
+
+.btnMulti {
+    grid-area: btnMulti;
+}
+
+.btn3 {
+    grid-area: btn3;
+}
+
+.btn2 {
+    grid-area: btn2;
+}
+
+.btn1 {
+    grid-area: btn1;
+}
+
+.btnMinus {
+    grid-area: btnMinus;
+}
+
+.btnClear {
+    grid-area: btnClear;
+    box-shadow: 4px 4px white;
+}
+
+.btnDelete {
+    grid-area: btnDelete;
+    box-shadow: 4px 4px white;
+}
+
+.btn0 {
+    grid-area: btn0;
+}
+
+.btnPoint {
+    grid-area: btnPoint;
+}
+
+.btnEqual {
+    grid-area: btnEqual;
+    background: rgb(159, 106, 209);
+    box-shadow: 4px 4px rgb(159, 106, 209);
+}
+
+.btnPlusMinus {
+    grid-area: btnPlusMinus;
+    padding-top: 10px;
+}
+
+.btnAdd {
+    grid-area: btnAdd;
+}
+
+.btnPotencia {
+    grid-area: btnPotencia;
+}
+
+.btnPotencia10 {
+    grid-area: btnPotencia10;
+}
+
+.btnCuadrado {
+    grid-area: btnCuadrado;
+}
+
+.btnSin {
+    grid-area: btnSin;
+}
+
+.btnCos {
+    grid-area: btnCos;
+}
+
+.btnLog {
+    grid-area: btnLog;
+}
+
+.btnLogNep {
+    grid-area: btnLogNep;
+}
+
+.btnRaiz {
+    grid-area: btnRaiz;
+    padding-top: 10px;
+}
+
