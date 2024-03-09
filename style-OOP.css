@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#calculator {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 50px 60px 1fr 1fr 1fr 1fr;
+  margin: auto;
+  margin-top: 35px;
+  width: 520px;
+  height: 550px;
+  border-radius: 10px 10px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 0.8px #359404;
+  justify-items: center;
+  background: #359404;
+}
+
+#inputBakcUp,
+#operations {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  padding-right: 20px;
+  text-align: right;
+  border-radius: 10px 10px;
+  border: 1px solid black;
+  margin: 10px;
+  width: 90%;
+}
+
+#inputBakcUp {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  font-size: 20px;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+#operations {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  font-size: 28px;
+  margin-top: 0;
+}
+
+.btnCalculator {
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  font-size: 25px;
+  cursor: pointer;
+  border: 1.5px solid rgb(92, 82, 82);
+  margin: 10px;
+}
+
+.btnCalculator:active {
+  transform: scale(0.95);
+  background-image: url("./img/piedras.jpg");
+  border: 1px solid darkgreen;
+  box-shadow: 0px 0px darkgreen;
+}
+
+.btnNumber {
+  background: #eb4712;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 4px 4px 0.8px #eb4712;
+}
+
+.btn0 {
+  background-image: url("./img/Bola0.png");
+}
+.btn1 {
+  background-image: url("./img/bola1.png");
+}
+.btn2 {
+  background-image: url("./img/bola2.png");
+}
+.btn2 {
+  background-image: url("./img/bola2.png");
+}
+.btn3 {
+  background-image: url("./img/bola3.png");
+}
+.btn4 {
+  background-image: url("./img/bola4.png");
+}
+.btn5 {
+  background-image: url("./img/bola5.png");
+}
+.btn6 {
+  background-image: url("./img/bola6.png");
+}
+.btn7 {
+  background-image: url("./img/bola7.png");
+}
+.btn8 {
+  background-image: url("./img/bola8.png");
+}
+.btn9 {
+  background-image: url("./img/bola9.png");
+}
+
+.btnNumber:active {
+  transform: scale(0.95);
+  background-image: url("./img/piedras.jpg");
+}
+
+.btnOper {
+  background: #5ccef5;
+  box-shadow: 4px 4px 0.8px #5ccef5;
+}
+
+.btnClear {
+  background: black;
+  color: white;
+  border: 1px solid white;
+  box-shadow: 4px 4px 0.8px black;
+}
+
+.btnEqual {
+  background: #25316d;
+  height: 80px;
+  width: 160px;
+  color: white;
+  border-radius: 10px 10px;
+  box-shadow: 4px 4px 0.8px #25316d;
+  grid-column-start: 4;
+  grid-column-end: 6;
+}
+
+.btnDelete {
+  background: red;
+  color: white;
+  box-shadow: 4px 4px 0.8px red;
+}

@@ -1,4 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=14102862&assignment_repo_type=AssignmentRepo)
+
 # Reto calculadora simple
 
 Este es un ejercicio para crear una calculadora
@@ -47,8 +48,14 @@ Esta función limpia la pantalla
 
 ## Evaluación
 
--   Si la calculadora no sigue el esquema propuesto o no hace las operaciones indicadas, recibirás una nota del 0 al 5
--   Si la calculadora sigue el esquema propuesto y hace las operaciones indicadas, recibirás una nota del 5 al 7
--   Si has descubierto alternativas a eval(), tendrás un punto más
--   Si además has trabajado los CSS para que tenga un aspecto impresionante, tendrás un punto más.
--   Si encima has añadido funcionalidades extra a la calculadora, tendrás un punto más.
+- Si la calculadora no sigue el esquema propuesto o no hace las operaciones indicadas, recibirás una nota del 0 al 5
+- Si la calculadora sigue el esquema propuesto y hace las operaciones indicadas, recibirás una nota del 5 al 7
+- Si has descubierto alternativas a eval(), tendrás un punto más
+- Si además has trabajado los CSS para que tenga un aspecto impresionante, tendrás un punto más.
+- Si encima has añadido funcionalidades extra a la calculadora, tendrás un punto más.
+
+## Comentarios propios del programador.
+
+- He creado una primera calculadora más estética con CSS y además le he añadido más funcionalidades en los - botones. Esta primera calculadora la he creado solo con manipulación del DOM.
+
+- Para probar un método diferente he generado una calculadora, no tan estética como la primera, pero quería implementar la funcionalidad más parecida a la calculadora científica y esta calculadora la he realizado utilizando la programación orientada a objetos.
